@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
-<title>My Old Kentucky Home</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>My Old Kentucky Home</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
 
-<h1 id="title">My Old Kentucky Home</h1>
+    <h1 id="title">My Old Kentucky Home</h1>
 
-<video src="https://www.cs.tufts.edu/comp/20/my_old_kentucky_home.mp4" id="music_video" controls></video>
-<div id="lyrics"></div>
+    <video src="https://www.cs.tufts.edu/comp/20/my_old_kentucky_home.mp4" id="music_video" controls></video>
+    <div id="lyrics"></div>
 
 <script>
-    // Complete this section and create a CSS file named style.css
+    var video = document.getElementById('music_video');
+    video.addEventListener("timeupdate", function() {
+        var time = video.currentTime;
+        if (time >= 8 && time < 15) {
+            document.getElementById("lyrics").innerHTML = "<p1>The sun shines bright in My Old Kentucky Home</p1>";
+        }
+        if (time >= 15 && time < 22) {
+            document.getElementById("lyrics").innerHTML = "<p1>'Tis summer, the people are gay</p1>";
+        }
+        if (time >= 22 && time < 28) {
+            document.getElementById("lyrics").innerHTML = "<p1>The corn-top's ripe and the meadow's in the bloom</p1>";
+        }
+        if (time >= 28 && time < 35) {
+            document.getElementById("lyrics").innerHTML = "<p1>While the birds make music all the day</p1>";
+        }
+        if (time >= 35 && time < 43) {
+            document.getElementById("lyrics").innerHTML = "<p1>The young folks roll on the little cabin floor</p1>";
+        }
+        if (time >= 43 && time < 49) {
+            document.getElementById("lyrics").innerHTML = "<p1>All merry, all happy and bright</p1>";
+        }
+        if (time >= 49 && time < 57) {
+            document.getElementById("lyrics").innerHTML = "<p1>By 'n' by hard times comes a knocking at the door</p1>";
+        }
+        if (time >= 57 && time < 64) {
+            document.getElementById("lyrics").innerHTML = "<p1>Then My Old Kentucky Home, good night!</p1>";
+        }
+        if (time >= 64 && time < 70) {
+            document.getElementById("lyrics").innerHTML = "<p1>Weep no more my lady</p1>";
+        }
+        if (time >= 70 && time < 76) {
+            document.getElementById("lyrics").innerHTML = "<p1>Oh weep no more today</p1>";
+        }
+        if (time >= 76 && time < 84) {
+            document.getElementById("lyrics").innerHTML = "<p1>We will sing one song For My Old Kentucky Home</p1>";
+        }
+        if (time >= 84) {
+            document.getElementById("lyrics").innerHTML = "<p1>For My Old Kentucky Home, far away...</p1>";
+        }
+    })
 </script>
 </body>
 </html> 
