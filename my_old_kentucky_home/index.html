@@ -18,17 +18,20 @@
     var video = document.getElementById('music_video');
     video.addEventListener("timeupdate", function() {
         var time = video.currentTime;
+        if (time < 8) {
+            document.getElementById("lyrics").innerHTML = "";   
+        }
         if (time >= 8 && time < 15) {
-            document.getElementById("lyrics").innerHTML = "<img src='sun.jpeg' alt='sunshine'><p1>The sun shines bright in My Old Kentucky Home</p1>";
+            document.getElementById("lyrics").innerHTML = "<img src='sun.jpeg' alt='sunshine' id='sun'><p1 id='suntext'>The sun shines bright in My Old Kentucky Home</p1>";
         }
         if (time >= 15 && time < 22) {
-            document.getElementById("lyrics").innerHTML = "<img src='sun.jpeg' alt='sunshine'><p1>'Tis summer, the people are gay</p1>";
+            document.getElementById("lyrics").innerHTML = "<img src='sun.jpeg' alt='sunshine' id='sun'><p1 id='suntext'>'Tis summer, the people are gay</p1>";
         }
         if (time >= 22 && time < 28) {
             document.getElementById("lyrics").innerHTML = "<img src='corn.png' alt='corn'><p1>The corn-top's ripe and the meadow's in the bloom</p1>";
         }
         if (time >= 28 && time < 35) {
-            document.getElementById("lyrics").innerHTML = "<img src='birds.jpg' alt='singing birds'><p1>While the birds make music all the day</p1>";
+            document.getElementById("lyrics").innerHTML = "<img src='birds.jpg' alt='singing birds' id='birds'><p1 id='birdtext'>While the birds make music all the day</p1>";
         }
         if (time >= 35 && time < 42) {
             document.getElementById("lyrics").innerHTML = "<img src='chilluns.gif' alt='young folks'><p1>The young folks roll on the little cabin floor</p1>";
@@ -52,7 +55,7 @@
             document.getElementById("lyrics").innerHTML = "<img src='kentuckyland.jpg' alt='Kentucky landscape'><p1>We will sing one song For My Old Kentucky Home</p1>";
         }
         if (time >= 84) {
-            document.getElementById("lyrics").innerHTML = "<img src='kentuckyseal.png' alt='Kentucky seal'><p1>For My Old Kentucky Home, far away...</p1>";
+            document.getElementById("lyrics").innerHTML = "<img src='kentuckyseal.png' alt='Kentucky seal' id='seal'><p1 id='sealtext'>For My Old Kentucky Home, far away...</p1>";
         }
     })
 </script>

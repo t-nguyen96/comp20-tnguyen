@@ -1,0 +1,53 @@
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#title {
+    text-align: center;
+    font-family: cursive;
+}
+#music_video {
+    margin: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+img {
+    width: 280px;
+    margin: auto;
+    margin-top: 1%;
+    margin-left: 15%;
+}
+p1 {
+    position: relative;
+    left: 10px;
+    bottom: 70px;
+    margin: auto;
+    padding: 2%;
+    font-size: 20pt;
+    font-family: cursive;
+}
+#sun {
+    width: 200px;
+    margin-left: 17%;
+    margin-top: 0%;
+}
+#suntext {
+    position: relative;
+    bottom: 105px;
+}
+#birds {
+    width: 160px;
+    margin-left: 19%;
+    width: 190px;
+}
+#birdtext {
+    position: relative;
+    bottom: 120px;
+}
+#seal {
+    width: 200px;
+}
+#sealtext {
+    position: relative;
+    bottom: 100px;
+}
