@@ -37,23 +37,50 @@
         }
         function google_map_init(lat, lng, mapdata) {            
             latlng = new google.maps.LatLng(lat, lng);
-            myOptions = { center: latlng , zoom: 15};
+            myOptions = { center: latlng , zoom: 14};
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
             ppl_init(mapdata, map);
-            var locmark = new google.maps.Marker( {
+            landmark_init(mapdata, map);
+            var mylocmark = new google.maps.Marker( {
                 position: latlng,
                 map: map,
-                title: "You"
+                title: "You",
+                animation: google.maps.Animation.DROP,
+                icon: "you.png"
             });
+            var mylocString = "<p>GABRIEL_BECKER</p>";
+            var mylocWindow = new google.maps.InfoWindow({
+                content: mylocString
+            });
+            mylocmark.addListener('click', function() {
+                mylocWindow.open(map, mylocmark);
+            });
+
         }
         function ppl_init(mapdata, map) {
-            var curr_person = mapdata.people
+            var curr_person = mapdata.people;
+            var infowindow = new google.map.InfoWindow();
             for (i = 0 ; i < mapdata.people.length ; i++) {
                 var latlng = new google.maps.LatLng(curr_person[i].lat, curr_person[i].lng )
                 var pplmark = new google.maps.Marker( {
                     position: latlng,
                     map: map,
-                    title: curr_person[i].login
+                    title: curr_person[i].login,
+                    icon: "personicon.png"
+                });
+            }
+        }
+        function landmark_init(mapdata, map) {
+            var curr_landmark = mapdata.landmarks;
+            for (i = 0 ; i < mapdata.landmarks.length ; i++) {
+                var lng = curr_landmark[i].geometry.coordinates[0];
+                var lat = curr_landmark[i].geometry.coordinates[1];
+                var latlng = new google.maps.LatLng(lat, lng)
+                var landmark = new google.maps.Marker( {
+                    position: latlng,
+                    map: map,
+                    title: curr_landmark[i].properties.Location_Name,
+                    icon: "poi.png"
                 });
             }
         }
