@@ -59,7 +59,7 @@
         }
         function ppl_init(mapdata, map) {
             var curr_person = mapdata.people;
-            var infowindow = new google.map.InfoWindow();
+            var infowindow = new google.maps.InfoWindow();
             for (i = 0 ; i < mapdata.people.length ; i++) {
                 var latlng = new google.maps.LatLng(curr_person[i].lat, curr_person[i].lng )
                 var pplmark = new google.maps.Marker( {
@@ -67,6 +67,10 @@
                     map: map,
                     title: curr_person[i].login,
                     icon: "personicon.png"
+                }); 
+                google.maps.event.addListener(pplmark, 'click', function() {
+                    infowindow.setContent(this.title);
+                    infowindow.open(map, this);   
                 });
             }
         }
