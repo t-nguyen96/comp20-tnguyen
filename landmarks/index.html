@@ -36,7 +36,7 @@
         }
         function google_map_init(lat, lng, mapdata) {            
             latlng = new google.maps.LatLng(lat, lng);
-            myOptions = { center: latlng , zoom: 14};
+            myOptions = { center: latlng , zoom: 16};
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
             ppl_init(mapdata, map, lat, lng);
             min_landmark = landmark_init(mapdata, map, lat, lng);
@@ -132,7 +132,7 @@
             return content_str;
         }
         function get_landmarkContent(name, info) {
-            var content_str ='<h2 id="title">' + name + '</h2>' 
+            var content_str ='<h2 id="landmarktitle">' + name + '</h2>' 
                             + '<p>' + info + '</p>';
             return content_str;
         }
