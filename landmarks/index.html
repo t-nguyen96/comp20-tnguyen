@@ -21,7 +21,7 @@
         function data_init(lat, lng) {
             var request = new XMLHttpRequest();
             var url = "https://defense-in-derpth.herokuapp.com/sendLocation";
-            var params = "login=GABRIEL_BECKER&lat=" + lat + "&lng=" + lng;
+            var params = "login=GABRIEL_BECKER&lat=" + lat + "&lng=" + lng;s
             request.open("POST", url, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.onreadystatechange = function() {

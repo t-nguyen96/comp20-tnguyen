@@ -1,1 +1,15 @@
 /* Your CSS here... */
+
+h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+p {
+    background-color: yellow;
+    margin: auto;
+    margin-bottom: 2%;
+    height: 20px;
+    padding: 4px;
+    padding-left: 7px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border-radius: 4px;
+}
