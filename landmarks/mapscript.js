@@ -12,7 +12,7 @@ function map_init()
 function data_init(lat, lng) 
 {
         var request = new XMLHttpRequest();
-        var url = "https://defense-in-derpth.herokuapp.com/sendLocation";
+        var url = "https://pure-meadow-76257.herokuapp.com/sendLocation";
         var params = "login=GABRIEL_BECKER&lat=" + lat + "&lng=" + lng;
         request.open("POST", url, true);
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
